@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node build/index.js",
     "dev": "nodemon src/index.ts",
+    "build": "tsc -b",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint:check": "eslint . --max-warnings=1500",
     "lint:fix": "eslint . --fix",
