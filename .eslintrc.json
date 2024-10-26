@@ -3,16 +3,10 @@
     "es2022": true,
     "node": true
   },
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier"
-  ],
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier"],
   "overrides": [
     {
-      "files": [
-        "*.ts"
-      ], // Specify that the following rules apply only to TypeScript files
+      "files": ["*.ts"], // Specify that the following rules apply only to TypeScript files
       "parser": "@typescript-eslint/parser",
       "parserOptions": {
         "project": "./tsconfig.json",
@@ -31,70 +25,41 @@
           "error",
           {
             "selector": "interface",
-            "format": [
-              "PascalCase"
-            ],
-            "prefix": [
-              "I",
-              "Interface",
-              "TestInterface"
-            ]
+            "format": ["PascalCase"],
+            "prefix": ["I", "Interface", "TestInterface"]
           },
           {
-            "selector": [
-              "typeAlias",
-              "typeLike",
-              "enum"
-            ],
-            "format": [
-              "PascalCase"
-            ]
+            "selector": ["typeAlias", "typeLike", "enum"],
+            "format": ["PascalCase"]
           },
           {
             "selector": "typeParameter",
-            "format": [
-              "PascalCase"
-            ],
-            "prefix": [
-              "T"
-            ]
+            "format": ["PascalCase"],
+            "prefix": ["T"]
           },
           {
             "selector": "variable",
-            "format": [
-              "camelCase",
-              "UPPER_CASE"
-            ],
+            "format": ["camelCase", "UPPER_CASE"],
             "leadingUnderscore": "allow"
           },
           {
             "selector": "parameter",
-            "format": [
-              "camelCase"
-            ],
+            "format": ["camelCase"],
             "leadingUnderscore": "allow"
           },
           {
             "selector": "function",
-            "format": [
-              "camelCase"
-            ]
+            "format": ["camelCase"]
           },
           {
             "selector": "memberLike",
-            "modifiers": [
-              "private"
-            ],
-            "format": [
-              "camelCase"
-            ],
+            "modifiers": ["private"],
+            "format": ["camelCase"],
             "leadingUnderscore": "require"
           },
           {
             "selector": "variable",
-            "modifiers": [
-              "exported"
-            ],
+            "modifiers": ["exported"],
             "format": null
           }
         ]
@@ -103,9 +68,7 @@
     {
       // Disable explicit function return type for index.ts as it uses a lot of templated code
       // which has convulated return types
-      "files": [
-        "./src/index.ts"
-      ],
+      "files": ["./src/index.ts"],
       "rules": {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/no-empty-function": "off"
@@ -113,19 +76,13 @@
     }
   ],
   "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "@typescript-eslint",
-    "eslint-plugin-tsdoc",
-    "import"
-  ],
+  "plugins": ["@typescript-eslint", "eslint-plugin-tsdoc", "import"],
   "root": true,
   "rules": {
     "no-restricted-imports": [
       "error",
       {
-        "patterns": [
-          "**/src/**"
-        ]
+        "patterns": ["**/src/**"]
       }
     ],
     // restrict the use of same package in multiple import statements
