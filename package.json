@@ -41,9 +41,8 @@
     "ts-node": "^10.9.2"
   },
   "lint-staged": {
-    "**/*.{ts,json}": [
+    "**/*.{ts,tsx,js,jsx,json}": [
       "prettier --write"
-    ],
-    "**/*.ts": "eslint --fix"
+    ]
   }
 }
